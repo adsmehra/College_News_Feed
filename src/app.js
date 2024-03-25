@@ -109,7 +109,7 @@ app.post("/signup",async (req,res)=>{
 })
 
 const openai=new OpenAI({
-  apiKey:"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"
+  apiKey:"YOUR_API_KEY"
 })
 
 
