@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vithreads Signup</title>
+  <link rel="stylesheet" href="stylesheet.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<body>
+    <div class="wrapper">
+      <form id="myForm" action="/signup" method="POST">
+        <h2>Sign Up</h2>
+        <h5>to Vithreads</h5>
+        <div class="input-field">
+          <input type="text" name="name" required>
+          <label>Email</label>
+        </div>
+        <div class="input-field">
+          <input type="date" name="dob" required>
+          <label>Date of Birth</label>
+        </div>
+        <div class="input-field">
+          <input id="2" type="password" name="pass" required>
+          <label>Password</label>
+          <i class="fa-solid fa-eye" id="togglePassword2" style="position: absolute; right: 2%; margin-top: 20px; cursor: pointer;"></i>
+        </div>
+        <div class="input-field">
+          <input id="3" type="password" name="cpass" required>
+          <label>Confirm Password</label>
+          <i class="fa-solid fa-eye" id="togglePassword3" style="position: absolute; right: 2%; margin-top: 20px; cursor: pointer;"></i>
+        </div>
+        
+        <button type="submit" onclick="window.location.href='main.html';">Sign Up</button>
+        <div class="register">
+          <p>Already have an account? <a href="login.html">Login</a></p>
+        </div>
+      </form>   
+    </div>
+    <script>
+  
+      const togglePassword = document.getElementById('togglePassword2');
+      const password = document.getElementById('2');
+
+      togglePassword.onclick=function(){
+        if(password.type == "password"){
+          password.type = "type";
+          togglePassword.className="fa fa-eye-slash";
+        }
+        else{
+          password.type="password";
+          togglePassword.className="fa-solid fa-eye";
+        }
+      }
+      const togglePassword1 = document.getElementById('togglePassword3');
+      const password1 = document.getElementById('3');
+
+      togglePassword1.onclick=function(){
+        if(password1.type == "password"){
+          password1.type = "type";
+          togglePassword1.className="fa fa-eye-slash";
+        }
+        else{
+          password1.type="password";
+          togglePassword1.className="fa-solid fa-eye";
+        }
+      }
+    </script>
+  </div>
+</body>
+</html>

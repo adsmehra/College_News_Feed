@@ -1,0 +1,393 @@
+@import url(
+"https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: "Poppins", sans-serif;
+}
+body {
+background-image: url(newspaper.jpg);
+background-size:cover;
+}
+
+header {
+height: 70px;
+width: 100vw;
+padding: 0 30px;
+background-color: #1c232e;
+position: fixed;
+z-index: 100;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.logo {
+font-size: 27px;
+font-weight: 500;
+color: rgb(255, 255, 255);
+}
+
+.icn {
+height: 30px;
+}
+
+.menuicn {
+cursor: pointer;
+
+}
+
+.menuicn:hover{
+    background-color: #323c4e;
+    color:white;
+}
+
+.logosec {
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.logosec {
+gap: 30px;
+}
+
+.main-container {
+display: flex;
+position: relative;
+top: 70px;
+z-index: 1;
+}
+
+.input-field label {
+    position: relative;
+    top: 50%;
+    left: 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-field{
+    position:relative;
+    width:100%;
+    height: 250px;
+    padding: 5px;
+}
+
+.input-field1{
+    position:relative;
+    width:100%;
+    height: 50px;
+    padding: 5px;
+}
+
+.inputfield{
+    position:relative;
+    width:100%;
+    padding: 5px;
+    top:15px;
+    height:80px;
+}
+
+.genbt{
+    position: relative;
+    display: block;
+    width:150px;
+    align-items: center;
+    height:100%;
+    border-radius: 2px;
+    border:6px;
+    border-color: black;
+    background-color: rgb(238, 229, 229);
+}
+.genbt:hover{
+    background-color: rgb(218, 213, 192);
+
+}
+.inputbt{
+    position: relative;
+    width: 100%;
+    height: 30px;
+    padding: 5px;
+    
+}
+.dt{
+    position:absolute;
+    top:32px;
+}
+.input-field2{
+    position:relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    padding:5px;
+    margin-top:2%;
+    top:30px;
+}
+.input-field3{
+    position: relative;
+    display: block;
+
+}
+
+.input-field4{
+    position: relative;
+    display: block;
+    left: 728px;
+}
+
+.input-field5{
+    position: relative;
+    display: block;
+    left: 618px;
+}
+
+.filename{
+    font-size: 15px;
+}
+
+.input-field3 div{
+    padding-top: 20px;
+}
+
+.inpt{
+    position: relative;
+    top:50px;
+    border-radius: 20px;
+}
+
+select{
+    font-size: 14px;
+}
+
+
+#news{
+    position: absolute;
+    font-size:15px;
+    resize: none;
+    padding: 12px;
+    border-radius: 20px;
+}
+
+
+
+#summ{
+    padding: 12px;
+    position: absolute;
+    font-size:15px;
+    resize: none;
+    border-radius: 20px;
+    
+}
+
+.sumsave:hover{
+    color: white;
+    border-color: #1c232e;
+    background-color: #1c232e;
+  }
+
+.sumsave{
+    padding-left: 20px;
+    padding-right: 20px;
+    background: rgba(255, 255, 255, 0.15);
+    color: #1c232e;
+    position:relative;
+    font-size: 15px;
+    border: solid;
+    border-radius: 8px;
+
+}
+
+.sub:hover{
+  color: white;
+  border-color: #1c232e;
+  background-color: #1c232e;
+}
+
+
+.sub{
+    padding-right: 20px;
+    padding-left: 20px;
+    position: relative;
+    font-size:20px;
+    background: rgba(255, 255, 255, 0.15);
+    left: 430px;
+    color: #1c232e;
+    border:solid;
+    border-radius: 8px;
+}
+
+
+.main {
+height: calc(100vh - 70px);
+width: 100%;
+overflow-y: scroll;
+overflow-x: hidden;
+justify-content: center;
+align-items: center;
+padding: 40px 30px 30px 30px;
+}
+.insert{
+    width:100%;
+    height:100%;
+    margin-top: -700px;
+    visibility: hidden;
+}
+.home{
+    width:100%;
+    height:100%;
+    visibility: visible;
+}
+.nav {
+min-height: 91vh;
+width: 250px;
+background-color: var(--background-color2);
+position: absolute;
+top: 0px;
+left: 00;
+box-shadow: 5px 5px 5px rgba(112,155,162,1);
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+overflow: hidden;
+padding: 30px 0 20px 10px;
+}
+
+.navcontainer {
+height: calc(100vh - 70px);
+width: 330px;
+position: relative;
+overflow-y: scroll;
+overflow-x: hidden;
+transition: all 0.7s ease-in-out;
+}
+
+.navcontainer::-webkit-scrollbar {
+display: none;
+}
+
+.navclose {
+width: 70px;
+}
+
+.nav-option {
+width: 250px;
+height: 60px;
+display: flex;
+align-items: center;
+padding: 0 30px 0 20px;
+gap: 20px;
+transition: all 0.1s ease-in-out;
+}
+
+.nav-option:hover {
+border-left: 5px solid rgba(60, 178, 229, 0.825);
+
+cursor: pointer;
+}
+
+.nav-img {
+height: 30px;
+}
+
+.nav-upper-options {
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 30px;
+}
+
+.option1 {
+background: linear-gradient(129deg, rgba(112,155,162,1) 0%, rgba(233,223,216,1) 100%);
+color: white;
+cursor: pointer;
+}
+
+.option2 {
+    background: linear-gradient(129deg, rgba(112,155,162,1) 0%, rgba(233,223,216,1) 100%);
+    color: black;
+    cursor: pointer;
+    }
+
+.option3 {
+    background: linear-gradient(129deg, rgba(112,155,162,1) 0%, rgba(233,223,216,1) 100%);
+    color: black;
+    cursor: pointer;
+}
+
+.option4 {
+    background: linear-gradient(129deg, rgba(112,155,162,1) 0%, rgba(233,223,216,1) 100%);
+    color: black;
+    cursor: pointer;
+}
+
+.logout {
+    background: linear-gradient(129deg, rgba(112,155,162,1) 0%, rgba(233,223,216,1) 100%);
+    color: black;
+    cursor: pointer;
+}
+
+.nbox{
+    position: relative;
+    width: 900px;
+    height:290px;
+    background: rgb(112,155,162);
+    background: linear-gradient(129deg, rgba(112,155,162,1) 0%, rgba(233,223,216,1) 100%);
+    color:#1c232e;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 20px;
+    padding:8px;
+    z-index: 1;
+    display: flex;
+    border-color: rgba(112,155,162,1);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 3px;
+}
+.frame{
+    width:350px;
+    height:250px;
+    padding-right: 6px;
+}
+.reactions button{
+    background-color: transparent;
+    border:none;
+    transition: 0.2s;
+}
+.reactions button:hover{
+    transform:scale(1.5);
+}
+.pic{
+    position: relative;
+}
+.nbox form{
+    width:100%;
+    height:100%;
+}
+.newsarea{
+    width: 650px;
+}
+h4{
+    margin-block-start: 5px;
+    margin-block-end: 5px;
+}
+.botm{
+    position: absolute;
+    width:100%;
+    bottom:40px;
+    margin-left: 400px;
+ 
+}
+.txtsph{
+    position: absolute;
+    justify-content: center;
+    color:#1c232e;
+    background-color: transparent;
+}
+

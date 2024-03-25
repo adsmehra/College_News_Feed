@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible"
+		content="IE=edge">
+	<meta name="viewport"
+		content="width=device-width, 
+				initial-scale=1.0">
+	<title>VIThreads</title>
+	<link rel="stylesheet"
+		href="styleadmin.css">
+	<link rel="stylesheet"
+		href="responsive.css">
+	<link rel="stylesheet"
+	    href="homepage.css">	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+</head>
+
+<body>
+	<header>
+		<div class="logosec">
+			<div class="logo">Admin Dashboard</div>
+			<img src="views/menu.svg"
+				class="icn menuicn"
+				id="menuicn"
+				alt="menu-icon">
+				
+					  <nav class="navbar">
+						<div class="content">
+						  <ul class="links">
+							<li><a href="#">Genres</a>
+							<ul>
+							  <li><a href="#">Events</a></li>
+							  <li><a href="#">Sports</a></li>
+							  <li><a href="#">Placements</a></li>
+							  <li><a href="#">Academics</a></li>             
+							</ul>
+							</li>
+							<li><a href="#">Campus</a>
+							<ul>
+							  <li><a href="#">VIT AP</a></li>
+							  <li><a href="#">VIT Bhopal</a></li>
+							  <li><a href="#">VIT Chennai</a></li>
+							  <li><a href="#">VIT Vellore</a></li>             
+							</ul>
+							</li>
+						</ul>
+					  </nav>   
+					</div>
+                
+					
+	</header>
+
+	<div class="main-container" id="mc">
+		<div class="navcontainer">
+			<nav class="nav">
+				<div class="nav-upper-options">
+					<div class="nav-option option1" id="1" onclick="optclk(this.id)">
+						<img src="views/home.svg"
+							class="nav-img"
+							alt="home">
+						<h3>Home</h3>
+					</div>
+
+					<div class="nav-option option2" id="2" onclick="optclk(this.id)">
+						<img src="views/insert.svg"
+							class="nav-img"
+							alt="insertcontent">
+						<h3> Insert Content</h3>
+					</div>
+
+					<div class="nav-option option3" id="3" onclick="optclk(this.id)">
+						<img src="views/delete.svg"
+							class="nav-img"
+							alt="deletecontent">
+						<h3>Delete Content</h3>
+					</div>
+
+					
+					<div class="nav-option logout" id="4" onclick="optnclk()"> 
+						<img src="views/logout.svg"
+							class="nav-img"
+							alt="logout">
+						<h3>Logout</h3>
+					</div>
+				</div>
+			</nav>
+		</div>
+		<div class="main">
+		   <div class="home" id="hm">
+            {{#each news}}
+            <div>
+                <div class="nbox">
+                <div class="frame">
+                    <div class="pic">
+                    <img src="/images/Picture{{this.SLNo}}.png" width="348" height="245">
+                    </div>
+                    <div class="reactions">
+                    <button>👍🏻</button>
+                    <button style="color:red;">❤️</button>
+                    <button>😮</button>
+                    </div>
+                </div>
+                <div class="newsarea"><div><div><div><h4 itemprop="headline" class="S2DdZEgzkqC9bYeTJUGw">{{this.Title}}</h4></div>
+                <div class="njwxOAklpbTYvII3gDje">
+                    <span class="author">{{this.Campus}}</span> on <span clas="date">{{this.Date}}</span></div></div>
+                    <div><div itemprop="articleBody" class="summary" id="sum{{this.SLNo}}" >{{this.Summary}}</div></div></div>
+                    <div><a class="readmore" id="read{{this.SLNo}}" target="_blank" href="readMore.html?value={{this.Details}}">Read more...</a></div>
+                    <div class="botm">
+                    <button class="txtsph" id="speakButton{{this.SLNo}}" onclick="btnclk(this.id)" style="font-size:15px"><i id="icn{{this.SLNo}}" class="fa fa-volume-up"></i>Text to Speech</button>
+                </div></div>
+
+                </div>
+            </div> 
+
+            {{/each}}
+		   </div>
+		   <script src="speak.js"></script>
+          <div class="insert" id="ins">
+            
+			<div class="box-container">
+				<form id="sumForm" action="/summarize" method="get">
+					<div class="input-field">
+					  <h3>    News</h3>
+					  <textarea id="news" type="text" name="newsArea" rows="8" cols="120"  required>{{message1}}</textarea>
+					</div>
+					<div class="inputfield"></br>
+						<button type="submit" class="sumsave">Summarize</button>
+                    </div>
+					<div class="input-field1">
+					  <h3>    Summary</h3>
+					  <textarea id="summ" rows="3" cols="120" name="summary">{{message2}}</textarea>
+					</div>
+				</form>
+                    <div class="inpt">
+					<div class="input-field2">
+						<div class="input-field3">
+						<h3>    Date</h3><br>
+						<div><input class="dt" type="date" name="dates"></input></div>
+						</div>
+						<div class="input-field4">
+						<h3>    Genre</h3>
+						<select>
+							<option value="Academics">-Choose Genre- </option>
+							<option value="Academics">Academics</option>
+							<option value="Placements">Placements</option>
+							<option value="Sports">Sports</option>
+							<option value="Events ">Events</option>
+						</select>
+		
+						</div>
+
+					</div>
+		
+							
+					<div class="input-field2">
+						<div class="input-field3">
+						<h3>    Campus</h3>
+						<select name="cam" id="cam">
+							<option value="VIT Vellore">-Choose Campus-</option>
+							<option value="VIT Vellore">VIT Vellore</option>
+							<option value="VIT Chennai">VIT Chennai</option>
+							<option value="VIT Bhopal">VIT Bhopal</option>
+							<option value="VIT AP">VIT AP</option>
+						</select> 
+						</div>
+						<div class="input-field5">
+						<h3>    Image</h3>
+						<input type="file" id="myFile" class="filename"></input>
+						</div>
+					</div>
+
+				
+			
+		
+					<div class="input-field2">
+						<button class="sub" type="submit" >Save</button>
+                    </div>
+					</div>
+        
+            </div>
+          </div>
+        </div>
+        <script>
+            let menuicn = document.querySelector(".menuicn");
+            let nav = document.querySelector(".navcontainer");
+            
+            menuicn.addEventListener("click", () => {
+                nav.classList.toggle("navclose");
+            })
+			
+			function optclk(opt){
+				console.log(opt)
+				var v1=document.getElementById("1")
+				v1.style.color="black";
+				var v2=document.getElementById("2")
+				v2.style.color="black";
+				var v3=document.getElementById("3")
+				v3.style.color="black";
+				
+				document.getElementById(opt).style.color="white";
+				if (opt==1){
+					document.getElementById('ins').style.visibility="hidden";
+					document.getElementById('hm').style.visibility="visible";
+				}
+				if (opt==2){
+					document.getElementById('hm').style.visibility="hidden";
+					document.getElementById('ins').style.visibility="visible";
+					document.getElementByID('mc').style.overflow="hidden";
+				}
+			}
+			function optnclk(){
+				window.location.replace("login.html");	
+			}
+			
+        </script>
+</body>
+</html>

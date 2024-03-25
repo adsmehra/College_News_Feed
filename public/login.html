@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vithreads Login</title>
+  <link rel="stylesheet" href="stylesheet.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  
+</head>
+
+<body>
+    <div class="wrapper">
+      <form id="myForm" action="/login" method="POST">
+        <h2>Login</h2>
+        <h5>to Vithreads</h5>
+          <div class="input-field">
+          <input id="1" type="text" name="name" required>
+          <label>Email</label>
+        </div>
+        <div class="input-field">
+          <input class="pass" id="2" type="password" name="pass" required> 
+          <label>Password</label>
+          <i class="fa-solid fa-eye" id="togglePassword" style="position: absolute; right: 2%; margin-top: 20px; cursor: pointer;"></i>
+        </div>
+        <div class="forget">
+          <label for="remember">
+            <input type="checkbox" name="check" id="remember">
+            <p>Admin</p>
+          </label>
+          <a href="#">Forgot password?</a>
+        </div>
+        <button type="submit" >Log In</button>
+        <div class="register">
+          <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+        </div>
+      </form>   
+    </div>
+    
+  </div>
+  <script>
+    const togglePassword = document.getElementById('togglePassword');
+    const password = document.getElementById('2');
+
+    togglePassword.onclick=function(){
+      if(password.type == "password"){
+        password.type = "type";
+        togglePassword.className="fa fa-eye-slash";
+      }
+      else{
+        password.type="password";
+        togglePassword.className="fa-solid fa-eye";
+      }
+    }
+  </script>
+  
+</body>
+</html>
